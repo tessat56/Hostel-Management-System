@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table,th,td{
+            border:1px solid rgb(0, 151, 93);
+            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+        }
+        table{
+            width:50%;
+            margin-left:auto;
+            margin-right:auto;
+            border-collapse: collapse; /* to remove double borders */
+        }
+        th{
+            height:70px;
+            color: #ffffff;
+            background-color: rgb(0, 0, 0);
+        }
+        h1{
+            padding:25px;
+            text-align:center;
+        }
+    </style>
+<head>
+    <title>Room List</title>
+</head>
+<body>
+    <h1>Room List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Room No</th>
+                <th>Year</th>
+                <th>Rent</th>
+                <th>Vacancy</th>
+                <th>Book Room</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for room in rooms %}
+            <tr>
+                <td>{{ room.room_no }}</td>
+                <td>{{ room.year }}</td>
+                <td>{{ room.rent }}</td>
+                <td>{{ room.vacancy }}</td>
+                <td><a href="{% url 'room_detail' room.id %}">BOOK</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% comment %} <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const updateButtons = document.querySelectorAll('.update-btn');
+    
+        updateButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const roomId = button.getAttribute('data-room-id');
+                const vacancyElement = document.getElementById(`vacancy-${roomId}`);
+                const currentVacancy = parseInt(vacancyElement.textContent);
+                if (currentVacancy >= 1) {
+                    const response = await fetch(`/update_vacancy/${roomId}/`);
+                    if (response.ok) {
+                        vacancyElement.textContent = currentVacancy - 1;
+                    }
+                }
+            });
+        });
+    });
+    </script> {% endcomment %}
+</html>

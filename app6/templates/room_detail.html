@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h1,p{
+            text-align: center;
+        }
+        h1{
+            padding-top: 100px;
+        }
+        p{
+            font-size: larger;
+        }
+        button{
+            display: flex;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+        form{
+            padding-right: 50px;
+        }
+        section{
+            padding-top: 15px;
+            padding-left: 39%;
+            display: flex;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <head>
+        <title>Room Detail</title>
+    </head>
+    <body>
+        <h1>Confirm booking?</h1>
+        <p>Room No: {{ room.room_no }}</p>
+        <p>Year: {{ room.year }}</p>
+        <p>Rent: {{ room.rent }}</p>
+        <p>NOTE: Valid for 1 year</p>
+        <section>
+            <form method="post" action="{% url 'make_payment' room.id %}">
+                {% csrf_token %}
+                <button type="submit">Make Payment</button>
+            </form>
+            <button>
+                <a href="{% url 'room_list' %}">Back to Room List</a>
+            </button>
+        </section>
+    </body>
+</html>

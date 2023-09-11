@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign-Up</title>
+   
+ <style>
+    
+    body
+    {
+        
+        width:100%;
+        height:1000px; 
+        background-image: linear-gradient(to bottom right, rgb(12, 14, 64), rgb(140, 147, 221));
+        /* image-rendering:optimizeQuality;
+        background-image:url('morning_glory.png'); */
+        /* background-repeat: no-repeat; */
+    }
+    img
+    {
+
+        width:400px;
+        height:100px;
+    }
+    
+    .login
+    {
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        position:absolute;
+        top:11px;
+        left:10px;
+        
+
+
+    }
+    .loginbox
+    {
+        background: black;
+        width:330px;
+        height:460px;
+        color:#fff;
+        top:50%;
+        left:50%;
+        position:absolute;
+        transform:translate(-50%,-50%);
+        box-sizing:border-box;
+        border-radius:14.1%;
+        
+    }
+    .loginbox input[type="text"],input[type="password"]
+    {
+        background:transparent;
+        border:none;
+        border-bottom: 1px solid rgb(120, 113, 251);
+        outline:none;
+        height:40px;
+        color:white;
+        font-size:15px;
+        
+
+    }
+
+    p:hover
+    {
+        color:rgb(95, 43, 226);
+    }
+
+    .loginbox input[type="submit"]
+    {
+        width:100%;
+        height:35px;
+        margin-bottom:-30px;
+        margin-top:13px;
+        background-color: rgb(47, 22, 130);
+        font-family:'Oxygen', sans-serif;
+        font-size:15px;
+        font-weight: bold;
+        border-radius:100px;
+        
+
+    }
+
+    .loginbox input[type="submit"]:hover
+    {
+        cursor:pointer;
+        background: rgb(97, 64, 228);
+        color:#fff;
+    }
+    .loginbox a
+    {
+        color:white;
+    }
+    /* .loginbox a:hover
+    {
+        color:rgb(100, 71, 220);
+    } */
+    h1
+    {
+        font-family:'Oxygen', sans-serif;
+        padding:10px;
+        text-align:center;
+        margin-left:0px;
+
+    }
+    form
+    {
+        font-family:'Oxygen', sans-serif;
+        padding:20px;
+
+    }
+    .loginbox a
+   {
+        color:rgb(210, 209, 227);
+        margin-left: 70px;
+
+   }
+   .loginbox a:hover
+   {
+        color:rgb(72, 35, 159);
+        margin-left: 70px;
+
+   }
+    
+  
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@700&family=Libre+Baskerville&family=Noto+Serif&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+      
+    
+
+       <div class="loginbox">
+            
+            <h1>Gate-pass In</h1>
+
+             
+            {% for i in key %}
+            <form action="{% url 'gatepassin' i.id %}" method="POST">
+                {% endfor %}
+
+                {% csrf_token %}
+
+                <p>Date In</p>
+                <input type="date" name="date" placeholder="Enter Date out">
+                <p>Time In</p>
+                <input type="time" name="time" placeholder="Enter Time out">
+                    <input type = "submit"/>
+                    
+                   
+            </form>
+               
+       </div>
+
+</body>
+
+</html>

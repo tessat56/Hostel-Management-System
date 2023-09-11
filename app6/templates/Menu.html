@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       .menu{
+           min-height: 100vh;
+           width: 100%;
+           background-color: #fff;
+           background-position: center;
+           background-size: cover;
+           position: relative;
+           font-family: 'Comic Sans MS';
+           color: #fff;
+       }
+       h1{
+       /food menu/
+           font-size: 62px;
+           font-weight: 600;
+           text-align: center;
+           font-family: 'Arial Black';
+           color: #000;
+       }
+       .row{
+           margin-top: 5%;
+           display: flex;
+           width: 100%;
+           height: auto;
+           flex-direction: row;
+           flex-wrap: wrap;
+           justify-content: space-around;
+       }
+       .menu-col{
+           flex-basis: 31%;
+           /background: linear-gradient(#232526,#414345);/
+           background: linear-gradient(#42275a,#734b6d);
+           border-radius: 10px;
+           margin-bottom: 5%;
+           margin: 10px;
+           padding: 30px 12px;
+           box-sizing: border-box;
+           transition: 0.5s;
+       }
+       h2{
+           text-align: center;
+           font-weight: 900;
+           font-size: 35px;
+           margin: 10px 0;
+
+
+       }
+       h3{
+           font-size: 30px;
+           font-weight: 300;
+           line-height: 22px;
+           padding: 10px;
+       }
+       p{
+           font-size: 25px;
+           font-weight: 300;
+           line-height: 22px;
+           padding: 11px;
+       }
+       .menu-col:hover{
+           /to create shadow behind box/
+           box-shadow: 0 0 20px 0px rgb(7, 7, 7);
+       }
+       .sug{
+           padding-left: 19%;
+       }
+       .sug form {
+           text-align: center;
+           padding: 20px;
+           border: 2px solid #42275a;
+           border-radius: 10px;
+           width: 80%;
+           position: center;
+       }
+       .sug h2{
+           color: #000;
+       }
+       #suggestion-text {
+           width: 60%;
+           padding: 10px;
+           margin-bottom: 10px;
+           border: 1px solid #ccc;
+           border-radius: 5px;
+       }
+
+
+       #suggestion-text::placeholder {
+           color: #999;
+       }
+
+
+       #suggestion-form button {
+           background-color: #42275a;
+           color: #fff;
+           padding: 8px 16px;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+       }
+       #suggestion-form button:hover {
+           background-color: #734b6d;
+       }
+   </style>
+   <head>
+       <!-- <meta name="viewport" content="with-device-width, intial-scale=1.0"> -->
+       <title>food menu</title>
+       <!-- <link rel="stylesheet" href="style.css"> -->
+   </head>
+   <body>
+       <section class="menu">
+           <!-- <div class="nav-links" id="nav-links">
+               <ul>
+                   <li><a href="">HOME</a></li>
+               </ul>
+           </div> -->
+           <h1>FOOD MENU</h1>
+           <div class="sug">
+               <h2>SUGGESTION</h2>
+               <form method="post" action="{% url 'menu' %}">
+                   {% csrf_token %}
+                   <textarea name="sugg" placeholder="Enter your menu suggestion..." rows="4"></textarea>
+                   <button type="submit">Submit Suggestion</button>
+               
+           </div>
+          
+           <div class="row">
+               <div class="menu-col">
+                   <h2>MONDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Dosa, Idli, Sambar, Chutney</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>TUESDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Appam, Stew(Veg/Non)</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>WEDNESDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Chappati, Curry(Veg/Non)</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>THURSDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Dosa, Idli, Sambar, Chutney</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>FRIDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Appam, Stew(Veg/Non)</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>SATURDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Chappati, Curry(Veg/Non)</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Biriyani(Veg/Non)</p>
+               </div>
+               <div class="menu-col">
+                   <h2>SUNDAY</h2>
+                   <h3>BREAKFAST(7:00 to 9:00AM)</h3>
+                   <p>Puri Masala</p>
+                   <h3>LUNCH(1:00 to 2:00PM)</h3>
+                   <p>Fried Rice(Veg/Non)</p>
+                   <h3>DINNER(8:00 to 9:00PM)</h3>
+                   <p>Meals(Veg/Non)</p>
+               </div>
+           </div>
+        </form>
+       </section>
+   </body>
+   {% comment %} <script>
+       document.getElementById('suggestion-form').addEventListener('submit', function (event) {
+           const suggestion = document.getElementById('suggestion-text').value;
+           if (suggestion.trim() !== '') {
+               alert('Thank you for your suggestion.');
+               document.getElementById('suggestion-form').reset();
+           } else {
+               alert('Please enter a valid suggestion.');
+           }
+       });
+   </script> {% endcomment %}
+  
+</html>

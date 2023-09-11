@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        * {
+                box-sizing: border-box;
+            }
+            body
+            {
+                
+                background-color: #9c0202;
+                
+            }
+            /* Style inputs */
+            input[type=text], select, textarea 
+            {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+            }
+            
+            input[type=submit]
+             {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                cursor: pointer;
+            }
+            
+            input[type=submit]:hover 
+            {
+                background-color: #45a049;
+            }
+            
+            /* Style the container/contact section */
+            .container 
+            {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 10px;
+            }
+            
+            /* Create two columns that float next to eachother */
+            .column
+             {
+                float: left;
+                width: 50%;
+                margin-top: 10px;
+                padding: 10px;
+            }
+            
+            /* Clear floats after the columns */
+            .row:after 
+            {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) 
+            {
+                .column, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+                }
+            }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h2>Student Grievance</h2>
+          <p>Feel free to post your queries:</p>
+          
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" method="POST" action="">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" placeholder="john">
+              <label for="lname">Email</label>
+              <input type="text" id="lname" name="email" placeholder="john@gmail.com">
+              <label for="lname">Room no.</label>
+              <input type="text" id="lname" name="room" placeholder="214">
+              
+
+              <label for="subject">Complaint</label>
+              <textarea id="subject" name="message" placeholder="enter the text" style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+            <img src="/static/images/all.jpg" style="width:100%;margin: top 100PX;">
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby4lZ4Ng_c2ry2hM3Ow6Sh89mvKkhfAUEQOE6QIt8MUpUKMCmP-N5HKV4ib13KmTPrO/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>

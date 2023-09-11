@@ -1,0 +1,165 @@
+<!-- <!DOCTYPE html><html>
+<style>
+	table,th,td{
+		border:1px solid rgb(0, 151, 93);
+		text-align: center;
+		font-family:'Times New Roman', Times, serif;
+	}
+	table{
+		width:50%;
+		margin-left:auto;
+		margin-right:auto;
+		border-collapse: collapse; /* to remove double borders */
+	}
+	th{
+		height:70px;
+		color: #ffffff;
+		background-color: rgb(0, 0, 0);
+	}
+	h1{
+		padding:25px;
+		text-align:center;
+	}
+</style>
+<body>
+	<h1>ROOM ALLOCATION</h1>
+	<table id='tab'>
+    		<tr>
+				<th>ROOM NO</th>
+				<th>YEAR</th>
+				<th>RENT (12 months)</th>
+				<th>VACANCY</th>
+				<th>BOOK ROOM</th>
+    		</tr>
+      		<tr>
+        			<td>110</td>
+        			<td>1</td>
+					<td>Rs.27000</td>
+        			<td>4</td>
+        			<td><input type="button" onclick="book(1)"></td>
+      		</tr>
+      		<tr>
+        			<td>111</td>
+        			<td>1</td>
+					<td>Rs.27000</td>
+        			<td>4</td>
+        			<td><input type="button" onclick="book(2)"></td>
+      		</tr>
+			<tr>
+        			<td>112</td>
+        			<td>1</td>
+					<td>Rs.27000</td>
+        			<td>4</td>
+        			<td><input type="button" onclick="book(3)"></td>
+      		</tr>
+			<tr>
+        			<td>113</td>
+        			<td>1</td>
+					<td>Rs.27000</td>
+        			<td>4</td>
+        			<td><input type="button" onclick="book(4)"></td>
+      		</tr>
+			<tr>
+				<td>210</td>
+				<td>2</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(5)"></td>
+		    </tr>
+		    <tr>
+				<td>211</td>
+				<td>2</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(6)"></td>
+		    </tr>
+			<tr>
+				<td>212</td>
+				<td>2</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(7)"></td>
+		    </tr>
+			<tr>
+				<td>213</td>
+				<td>2</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(8)"></td>
+		    </tr>
+		  	<tr>
+				<td>310</td>
+				<td>3</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(9)"></td>
+			</tr>
+			<tr>
+				<td>311</td>
+				<td>3</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(10)"></td>
+			</tr>
+			<tr>
+				<td>312</td>
+				<td>3</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(11)"></td>
+			</tr>
+			<tr>
+				<td>313</td>
+				<td>3</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(12)"></td>
+			</tr>
+			<tr>
+				<td>410</td>
+				<td>4</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(13)"></td>
+			</tr>
+			<tr>
+				<td>411</td>
+				<td>4</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(14)"></td>
+			</tr>
+			<tr>
+				<td>412</td>
+				<td>4</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(15)"></td>
+			</tr>
+			<tr>
+				<td>413</td>
+				<td>4</td>
+				<td>Rs.27000</td>
+				<td>4</td>
+				<td><input type="button" onclick="book(16)"></td>
+			</tr>
+	</table>
+</body>
+
+<script>
+	function book(rowind){
+		var t=document.getElementById('tab'); // get table
+		var cell = t.rows[rowind].cells[3]; //get t[rowind][3]
+        var value = parseInt(cell.innerHTML); //parseint converts value in 'cell' to int 
+		if (value>0){
+			value=value-1;
+			cell.innerHTML=value; //to display modified value in table. If this is not given, new value will not be displayed in table.
+			alert("Proceed to payment?")
+		}
+		else{
+			alert("No vacancy in the selected room. Please select another room.")
+		}
+	}		
+</script>
+
+</html> -->

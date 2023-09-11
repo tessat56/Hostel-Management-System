@@ -1,0 +1,39 @@
+<html>
+    <style>
+        h1,p{
+            text-align: center;
+        }
+        h1{
+            padding-top: 100px;
+        }
+        p{
+            font-size: larger;
+        }
+        section{
+            padding-top: 15px;
+            padding-left: 45%;
+            display: flex;
+        }
+        button{
+            display: flex;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <body>
+        <h1>No vacancy!</h1>
+        <p>Sorry! There is no vacancy in the selected room.</p>
+        <p>Please select another room.</p>
+        <p>Contact warden for further details.</p>
+        <section>
+            <button>
+                <a href="{% url 'room_list' %}">Back to Room List</a>
+            </button>
+        </section>
+    </body>
+</html>

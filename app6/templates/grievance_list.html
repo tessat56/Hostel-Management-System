@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance List</title>
+</head>
+<body>
+    <h1>Grievance List</h1>
+    <table>
+
+
+        <thead>
+            <tr>
+                <th>Room Number</th>
+                <th>Complaint</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for grievance in grievances %}
+            <tr>
+                <td>{{ grievance.room_no }}</td>
+                <td>{{ grievance.complaint }}</td>
+                <td>{{ grievance.time_in }}</td>
+             </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
